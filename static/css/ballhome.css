@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.webgl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+nav {
+    color: white;
+    z-index: 2;
+    position: relative;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    color: #00b4f6;
+    z-index: 2;
+    position: absolute;
+    font-size: 20px;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -25%);
+}
+
+.button {
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    font-weight: 500;
+    background-color: rgb(20, 180, 255);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(70, 86, 255);
+    color: white;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+form {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-field {
+    position: relative;
+    height: 40px;
+    width: 30%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 15px;
+    background: #333;
+    color: white;
+    border: 1.5px solid #00b4f6;
+}
