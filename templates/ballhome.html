@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Home Page</title>
+    <link rel="icon" href="{{url_for('static', filename='assets/favicon.png')}}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/ballhome.css')}}">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+        integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+        crossorigin="anonymous"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+                "gsap" : "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <section></section>
+    <canvas class="webgl"></canvas>
+    <nav>
+        <form action="{{ url_for('update_ballposition') }}" method="post">
+            <input class="input-field" type="number" name='Xvalue' placeholder="X - Axis" required min="-10" max="10" />
+            <input class="input-field" type="number" name='Yvalue' placeholder="Y - Axis" required min="-10" max="10" />
+            <input class="input-field" type="number" name='Zvalue' placeholder="Z - Axis" required min="-10" max="10" />
+            <input class="button" type="submit" value="Move Ball" />
+        </form>
+        <a class="button" href="{{url_for('logout')}}">Log&nbsp;Out</a>
+    </nav>
+    <h1 class="title">Change the position of the ball by providing the values for X, Y, & Z axes.</h1>
+    <script type="module" src="{{url_for('static', filename='javascript/ballcreater.js')}}"></script>
+</body>
+
+</html>

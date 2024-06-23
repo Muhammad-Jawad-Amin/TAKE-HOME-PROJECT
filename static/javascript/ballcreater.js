@@ -221,12 +221,13 @@ form.addEventListener('submit', function (event) {
 
     updateBallPositionInScene(x, y, z);
     sendBallPositionUpdate(x, y, z);
+    form.reset()
 });
 
 // Send ball position update to the server
 async function sendBallPositionUpdate(x, y, z) {
     try {
-        const response = await fetch('/updateballposition', {
+        const response = await fetch('updateballposition', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
