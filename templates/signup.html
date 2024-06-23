@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <link rel="icon" href="{{url_for('static', filename='assets/favicon.png')}}" type="image/x-icon">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/loginsignup.css')}}">
+</head>
+
+<body>
+  <section></section>
+
+  <!-- partial:index.partial.html -->
+  <div class="container">
+    <header>SIGN UP FORM</header>
+    <form action="{{url_for('signup_page')}}" method="post">
+      <div class="field firstname-field">
+        <div class="input-field">
+          <input type="name" name='firstname' placeholder="Enter your First Name" class="firstname" required />
+        </div>
+        <span class="error name-error">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="error-text">Please enter a valid Name</p>
+        </span>
+      </div>
+      <div class="field lastname-field">
+        <div class="input-field">
+          <input type="name" name='lastname' placeholder="Enter your Last Name" class="lastname" required />
+        </div>
+        <span class="error name-error">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="error-text">Please enter a valid Name</p>
+        </span>
+      </div>
+      <div class="field email-field">
+        <div class="input-field">
+          <input type="email" name='email' placeholder="Enter your email" class="email" required />
+        </div>
+        <span class="error email-error">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="error-text">Please enter a valid email</p>
+        </span>
+      </div>
+      <div class="field password-field">
+        <div class="input-field">
+          <input type="password" name='password' placeholder="Password" class="password" required />
+          <i class="bx bx-hide show-hide"></i>
+        </div>
+        <span class="error password-error">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="error-text">
+            Please enter atleast 8 charatcer with number, symbol, small and
+            capital letter.
+          </p>
+        </span>
+      </div>
+      <div class="field confirm-password">
+        <div class="input-field">
+          <input type="password" name='confpassword' placeholder="Confirm Password" class="cPassword" required />
+          <i class="bx bx-hide show-hide"></i>
+        </div>
+        <span class="error cPassword-error">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="error-text">Password didn't match</p>
+        </span>
+      </div>
+      <div class="links">
+        <p>Already have an account?&nbsp;</p>
+        <a href="{{url_for('login_page')}}">Login</a>
+      </div>
+      <div class="input-field button">
+        <input type="submit" value="Signup Now" />
+      </div>
+    </form>
+  </div>
+
+  <!-- partial -->
+  <script type="text/javascript" src="{{url_for('static', filename='javascript/spancreater.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='javascript/signupvalidator.js')}}"></script>
+
+</body>
+
+</html>
