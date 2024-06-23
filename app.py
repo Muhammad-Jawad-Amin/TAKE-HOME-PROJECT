@@ -107,7 +107,8 @@ def update_ballposition():
         return jsonify(
             {"status": "failure", "message": "Please enter all values (X, Y, Z)"}
         )
-    elif not (-10 < x < 10) or not (-10 < y < 10) or not (-10 < z < 10):
+    elif x < -10 or x > 10 or y < -10 or y > 10 or z < -10 or z > 10:
+        print(x, y, z)
         return jsonify(
             {
                 "status": "failure",
