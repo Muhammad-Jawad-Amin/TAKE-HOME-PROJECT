@@ -1,8 +1,8 @@
-from decimal import Decimal
 import secrets
 import database as db
+from decimal import Decimal
 from flask_session import Session
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO
 from flask import (
     Flask,
     redirect,
